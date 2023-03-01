@@ -1,0 +1,10 @@
+# Changes here will be overwritten by Copier
+_commit: v1.2.1
+_src_path: gh:lincc-frameworks/python-project-template
+author_email: delucchi@andrew.cmu.edu
+author_name: Melissa DeLucchi
+create_example_module: true
+module_name: hipscat_joins
+preferred_linter: pylint
+project_name: hipscat-joins
+use_isort: true
