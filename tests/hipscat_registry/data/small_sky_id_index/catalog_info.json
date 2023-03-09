@@ -1,0 +1,8 @@
+{
+    "catalog_type": "index",
+    "catalog_name": "small_sky_id_index",
+    "epoch": "J2000",
+    "primary_catalog": "small_sky",
+    "id_column": "id",
+    "id_type": "str"
+}

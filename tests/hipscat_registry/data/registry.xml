@@ -1,0 +1,21 @@
+<registry>
+    <catalog name="small_sky" type="object" path="$DATA_DIR/small_sky/"/>
+    <catalog name="small_sky_detections" type="source" path="$DATA_DIR/small_sky_detections/">
+        <primary>small_sky</primary>
+    </catalog>
+    <catalog name="small_sky_neighbor_cache" type="neighbor" path="$DATA_DIR/small_sky_neighbor_cache/">
+        <primary>small_sky</primary>
+    </catalog>
+    <catalog name="small_sky_to_empty" type="association" path="$DATA_DIR/small_sky_to_empty/">
+        <primary>small_sky</primary>
+        <join>empty</join>
+    </catalog>
+    <catalog name="small_sky_to_detections" type="association" path="$DATA_DIR/small_sky_to_detections/">
+        <primary>small_sky</primary>
+        <join>small_sky_detections</join>
+    </catalog>
+    <catalog name="small_sky_id_index" type="index" path="$DATA_DIR/small_sky_id_index/">
+        <primary>small_sky</primary>
+    </catalog>
+    <catalog name="empty" path="$DATA_DIR/empty/"/>
+</registry>

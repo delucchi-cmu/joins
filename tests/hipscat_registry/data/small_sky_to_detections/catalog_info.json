@@ -1,0 +1,9 @@
+{
+    "catalog_type": "association",
+    "catalog_name": "small_sky_to_detections",
+    "primary_catalog": "small_sky",
+    "primary_column": "id",
+    "join_catalog": "small_sky_detections",
+    "join_column": "src_id",
+    "epoch": "J2000"
+}
