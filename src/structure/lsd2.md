@@ -1,4 +1,4 @@
-Prototype LSD2 (as of Jan)
+Prototype LSD2 (as of Mar)
 
 $PREFIX/
     output/
@@ -6,6 +6,14 @@ $PREFIX/
             gaia_meta.json
             gaia_order10_hpmap.fits
             catalog/
-                Norder2/
-                    Npix103/
+                _common_metadata
+                _metadata
+                Norder=2/
+                    Npix=103/
                         catalog.parquet
+            neighbor/
+                _common_metadata
+                _metadata
+                Norder=2/
+                    Npix=103/
+                        neighbor.parquet

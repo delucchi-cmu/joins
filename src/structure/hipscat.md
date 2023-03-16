@@ -1,9 +1,9 @@
-hipscat-import (as of Jan)
+hipscat-import (as of Mar)
 
 $PREFIX/
     gaia/
         catalog_info.json
         partition_info.csv
-        Norder2/
-            Npix103/
-                catalog.parquet
+        Norder=2/
+            Dir=0/
+                Npix=103.parquet
