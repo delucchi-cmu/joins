@@ -4,7 +4,6 @@ $PREFIX/
     gaia/
         catalog_info.json
         partition_info.csv
-        catalog/
-            Norder2/
-                Npix103/
-                    catalog.parquet
+        Norder2/
+            Npix103/
+                catalog.parquet
