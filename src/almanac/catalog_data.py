@@ -1,32 +1,6 @@
 """holder of single entry of catalog data"""
 
 
-class CatalogTextData:
-    """holder of the original text data for a catalog's almanac entry"""
-
-    def __init__(self):
-        """holder of the original text data for a catalog's almanac entry"""
-        self.catalog_name = ""
-        self.catalog_path = ""
-        self.catalog_type = ""
-        self.relative_path = ""
-        self.primary = None
-        self.join = None
-        self.notes = []
-        self.contact_info = []
-
-
-class NamespaceTextData:
-    """foo"""
-
-    def __init__(self):
-        """foo"""
-        self.namespace_part = ""
-        self.namespace_prefix = None
-        self.notes = []
-        self.contact_info = []
-
-
 class CatalogData:
     """holder of single entry of catalog data"""
 
