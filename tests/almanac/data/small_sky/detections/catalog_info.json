@@ -1,0 +1,8 @@
+{
+    "catalog_type": "source",
+    "catalog_name": "detections",
+    "epoch": "J2000",
+    "ra_column": "ra",
+    "dec_column": "dec",
+    "primary_catalog": "object"
+}

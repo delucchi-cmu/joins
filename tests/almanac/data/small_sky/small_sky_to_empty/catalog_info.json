@@ -1,0 +1,9 @@
+{
+    "catalog_type": "association",
+    "catalog_name": "small_sky_to_empty",
+    "primary_catalog": "small_sky",
+    "primary_column": "id",
+    "join_catalog": "empty",
+    "join_column": "id",
+    "epoch": "J2000"
+}

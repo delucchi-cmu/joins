@@ -1,0 +1,18 @@
+<almanac>
+    <namespace prefix="small_sky">
+        <catalog name="object" type="object" relative_path="object"/>
+        <catalog name="detections" type="source" relative_path="detections/">
+            <primary>object</primary>
+        </catalog>
+        <catalog name="object_neighbor_cache" type="neighbor" relative_path="object_neighbor_cache/">
+            <primary>object</primary>
+        </catalog>
+        <catalog name="object_to_detections" type="association" relative_path="object_to_detections/">
+            <primary>object</primary>
+            <join>detections</join>
+        </catalog>
+        <catalog name="object_id_index" type="index" relative_path="object_id_index/">
+            <primary>object</primary>
+        </catalog>
+    </namespace>
+</almanac>

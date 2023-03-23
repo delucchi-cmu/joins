@@ -1,0 +1,12 @@
+<almanac>
+    <include_almanac relative_path="small_sky/almanac.xml"/>
+    <namespace prefix="small_sky">
+        <catalog name="small_sky_to_empty" type="association" relative_path="small_sky/small_sky_to_empty/">
+            <primary>object</primary>
+            <join>empty</join>
+        </catalog>
+    </namespace>
+    <namespace  prefix="empty">
+        <catalog name="empty" relative_path="empty/"/>
+    </namespace>
+</almanac>

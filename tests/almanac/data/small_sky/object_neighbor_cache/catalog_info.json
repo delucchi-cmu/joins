@@ -1,0 +1,9 @@
+{
+    "catalog_type": "neighbor",
+    "catalog_name": "object_neighbor_cache",
+    "threshold_arcs": 1.3,
+    "epoch": "J2000",
+    "ra_column": "ra",
+    "dec_column": "dec",
+    "primary_catalog": "object"
+}

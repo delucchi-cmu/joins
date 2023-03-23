@@ -1,0 +1,8 @@
+{
+    "catalog_type": "index",
+    "catalog_name": "object_id_index",
+    "epoch": "J2000",
+    "primary_catalog": "object",
+    "id_column": "id",
+    "id_type": "str"
+}

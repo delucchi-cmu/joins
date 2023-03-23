@@ -1,0 +1,9 @@
+{
+    "catalog_type": "association",
+    "catalog_name": "object_to_detections",
+    "primary_catalog": "object",
+    "primary_column": "id",
+    "join_catalog": "detections",
+    "join_column": "src_id",
+    "epoch": "J2000"
+}

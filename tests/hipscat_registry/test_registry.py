@@ -1,5 +1,3 @@
-import xml.etree.ElementTree as ET
-
 from hipscat_registry import Registry
 
 
@@ -11,4 +9,3 @@ def test_load(test_registry_file, test_data_dir):
     reg.add_catalog("small_sky2", f"{test_data_dir}/small_sky")
     # reg.catalogs()
     reg.save_almanac()
-
