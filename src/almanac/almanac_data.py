@@ -88,34 +88,26 @@ def _parse_catalog_data(filename, catalog_el) -> CatalogTextData:
     catalog_data.catalog_path = abs_path
     catalog_data.catalog_type = catalog_el.get("type", default="object")
 
-    metadata_keywords = _get_metadata_keywords(catalog_data.catalog_path)
-    catalog_name = metadata_keywords["catalog_name"]
-    if catalog_data.catalog_name != catalog_name:
-        print(
-            "warning - catalog names don't match, which could cause confusion "
-            f"({catalog_data.catalog_name} vs {catalog_name})"
-        )
-
     if catalog_data.catalog_type == "object":
         pass
     elif catalog_data.catalog_type == "source":
         catalog_data.primary = _get_linked_catalog_name(
-            catalog_el, "primary", "source", catalog_name
+            catalog_el, "primary", "source", catalog_data.catalog_name
         )
     elif catalog_data.catalog_type == "index":
         catalog_data.primary = _get_linked_catalog_name(
-            catalog_el, "primary", "index", catalog_name
+            catalog_el, "primary", "index", catalog_data.catalog_name
         )
     elif catalog_data.catalog_type == "neighbor":
         catalog_data.primary = _get_linked_catalog_name(
-            catalog_el, "primary", "neighbor", catalog_name
+            catalog_el, "primary", "neighbor", catalog_data.catalog_name
         )
     elif catalog_data.catalog_type == "association":
         catalog_data.primary = _get_linked_catalog_name(
-            catalog_el, "primary", "association", catalog_name
+            catalog_el, "primary", "association", catalog_data.catalog_name
         )
         catalog_data.join = _get_linked_catalog_name(
-            catalog_el, "join", "association", catalog_name
+            catalog_el, "join", "association", catalog_data.catalog_name
         )
     else:
         raise ValueError(f"Unknown catalog type {catalog_data.catalog_type}")
