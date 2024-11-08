@@ -1,0 +1,18 @@
+name: Release Tracker
+description: Request release batch of LSDB, HATS, HATS-import packages.
+title: "Release: "
+assigness: delucchi-cmu
+
+body:
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Packages to release
+      options:
+        - label: lsdb
+        - label: hats
+        - label: hats-import
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
