@@ -1,4 +1,4 @@
-name: Release Tracker
+name: Release Tracker Form
 description: Request release batch of LSDB, HATS, HATS-import packages.
 title: "Release: "
 assigness: delucchi-cmu
