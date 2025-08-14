@@ -63,3 +63,8 @@ repos:
         language: system
         pass_filenames: false
         always_run: true
+  - repo: https://github.com/twisted/towncrier
+    rev: 23.11.0  # run 'pre-commit autoupdate' to update
+    hooks:
+      - id: towncrier-check
+        always_run: true
