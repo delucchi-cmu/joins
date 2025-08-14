@@ -20,37 +20,59 @@ Please check which packages you would like to be released:
 
 e.g. major/minor/patch, deadlines, blocking issues, breaking changes, folks to notify
 
-<!-- DON'T EDIT BELOW HERE -->
+## nested-* updates to include
 
-
+<!-- DEAR SUBMITTER -- DON'T EDIT BELOW HERE -->
 
 <!-- ================= -->
 <!-- PROCESS CHECKLIST -->
 <!-- ================= -->
 
-## hats release
+## towncrier, github, and pypi steps
 
+- [ ] run `cut_releases.py`
+
+### hats 
+
+- [ ] news PR approved / merged
 - [ ] tag in github
 - [ ] confirm on [pypi](https://pypi.org/manage/project/hats/releases/)
-- [ ] request new conda-forge version (see [similar issue](https://github.com/conda-forge/hats-feedstock/issues/3)) and approve
-- [ ] confirm on [conda-forge](https://anaconda.org/conda-forge/hats)
 
-## lsdb release
+### lsdb
 
+- [ ] update pinned versions (e.g. hats and nested) (or confirm no updates to pins)
+- [ ] news PR approved / merged
 - [ ] tag in github
 - [ ] confirm on [pypi](https://pypi.org/manage/project/lsdb/releases/)
-- [ ] request new conda-forge version (see [similar issue](https://github.com/conda-forge/hats-feedstock/issues/3))
-- [ ] confirm tagged hats version and approve
-- [ ] confirm on [conda-forge](https://anaconda.org/conda-forge/lsdb)
 
-## hats-import release
+### hats-import
 
+- [ ] update pinned versions (e.g. hats) (or confirm no updates to pins)
+- [ ] news PR approved / merged
 - [ ] tag in github
 - [ ] confirm on [pypi](https://pypi.org/manage/project/hats-import/releases/)
-- [ ] request new conda-forge version (see [similar issue](https://github.com/conda-forge/hats-feedstock/issues/3)) and approve
+
+## conda-forge steps
+
+### hats 
+
+- [ ] request new conda-forge version (open [bot command issue](https://github.com/conda-forge/hats-feedstock/issues/) with title `@conda-forge-admin, please update version`)
+- [ ] approve conda-forge PR
+- [ ] confirm on [conda-forge](https://anaconda.org/conda-forge/hats)
+
+### lsdb
+
+- [ ] request new conda-forge version (open [bot command issue](https://github.com/conda-forge/lsdb-feedstock/issues/) with title `@conda-forge-admin, please update version`)
+- [ ] confirm tagged `hats` and `nested-pandas` versions and approve
+- [ ] confirm on [conda-forge](https://anaconda.org/conda-forge/lsdb)
+
+### hats-import
+
+- [ ] request new conda-forge version (open [bot command issue](https://github.com/conda-forge/hats-import-feedstock/issues/) with title `@conda-forge-admin, please update version`)
 - [ ] confirm tagged hats version and approve
 - [ ] confirm on [conda-forge](https://anaconda.org/conda-forge/hats-import)
 
 ## Release announcement
 
+- [ ] copy contents of `news.md` into comment below
 - [ ] send release summary to LSSTC slack #lincc-frameworks-lsdb
