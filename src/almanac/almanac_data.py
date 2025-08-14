@@ -1,4 +1,5 @@
 """Original text from almanac data file."""
+
 from __future__ import annotations
 
 import json
@@ -56,9 +57,7 @@ def _get_linked_catalog_name(xml_node, node_type, link_type, catalog_name):
     if len(linked) == 0:
         raise ValueError(f"{link_type} {catalog_name} has no {node_type} catalog")
     if len(linked) > 1:
-        raise ValueError(
-            f"{link_type} {catalog_name} has too many {node_type} catalogs"
-        )
+        raise ValueError(f"{link_type} {catalog_name} has too many {node_type} catalogs")
     return linked[0].text
 
 
@@ -68,9 +67,7 @@ def _get_metadata_keywords(catalog_path):
         raise FileNotFoundError(f"No directory exists at {catalog_path}")
     metadata_filename = os.path.join(catalog_path, "catalog_info.json")
     if not os.path.exists(metadata_filename):
-        raise FileNotFoundError(
-            f"No catalog info found where expected: {metadata_filename}"
-        )
+        raise FileNotFoundError(f"No catalog info found where expected: {metadata_filename}")
 
     with open(metadata_filename, "r", encoding="utf-8") as metadata_info:
         metadata_keywords = json.load(metadata_info)
@@ -115,9 +112,7 @@ def _parse_catalog_data(filename, catalog_el) -> CatalogTextData:
     return catalog_data
 
 
-def _parse_included_almanac_data(
-    include_el, original_filename, prefix
-) -> AlmanacTextData:
+def _parse_included_almanac_data(include_el, original_filename, prefix) -> AlmanacTextData:
     """from a file"""
     almanac_data = IncludedAlmanacTextData()
 
@@ -128,9 +123,7 @@ def _parse_included_almanac_data(
 
     root_el = ET.parse(abs_path).getroot()
     for namespace in root_el.findall("namespace"):
-        almanac_data.namespaces.append(
-            _parse_namespace_data(abs_path, namespace, prefix)
-        )
+        almanac_data.namespaces.append(_parse_namespace_data(abs_path, namespace, prefix))
     return almanac_data
 
 
@@ -155,9 +148,7 @@ def parse_almanac_data(filename, namespace_prefix) -> AlmanacTextData:
             _parse_included_almanac_data(include_el, filename, namespace_prefix)
         )
     for namespace in root_el.findall("namespace"):
-        almanac_data.namespaces.append(
-            _parse_namespace_data(filename, namespace, namespace_prefix)
-        )
+        almanac_data.namespaces.append(_parse_namespace_data(filename, namespace, namespace_prefix))
     return almanac_data
 
 
@@ -205,5 +196,5 @@ def write_almanac_file(filename, namespace_prefix, catalog_paths, paths_relative
             ET.SubElement(catalog_el, "join").text = catalog.join
 
     tree = ElementTree(root)
-    ET.indent(tree, space="\t", level=0)
+    # ET.indent(tree, space="\t", level=0)
     tree.write(filename)

@@ -79,28 +79,20 @@ class Registry:
             if catalog_type == "object":
                 pass
             elif catalog_type == "source":
-                this_catalog.primary = self._get_linked_catalog(
-                    catalog, "primary", "source", catalog_name
-                )
+                this_catalog.primary = self._get_linked_catalog(catalog, "primary", "source", catalog_name)
                 this_catalog.primary.sources.append(this_catalog)
             elif catalog_type == "index":
-                this_catalog.primary = self._get_linked_catalog(
-                    catalog, "primary", "index", catalog_name
-                )
+                this_catalog.primary = self._get_linked_catalog(catalog, "primary", "index", catalog_name)
                 this_catalog.primary.indexes.append(this_catalog)
             elif catalog_type == "neighbor":
-                this_catalog.primary = self._get_linked_catalog(
-                    catalog, "primary", "neighbor", catalog_name
-                )
+                this_catalog.primary = self._get_linked_catalog(catalog, "primary", "neighbor", catalog_name)
                 this_catalog.primary.neighbors.append(this_catalog)
             elif catalog_type == "association":
                 this_catalog.primary = self._get_linked_catalog(
                     catalog, "primary", "association", catalog_name
                 )
                 this_catalog.primary.associations.append(this_catalog)
-                this_catalog.join = self._get_linked_catalog(
-                    catalog, "join", "association", catalog_name
-                )
+                this_catalog.join = self._get_linked_catalog(catalog, "join", "association", catalog_name)
                 this_catalog.join.associations_right.append(this_catalog)
             else:
                 raise ValueError(f"Unknown catalog type {catalog_type}")
@@ -108,19 +100,13 @@ class Registry:
     def _get_linked_catalog(self, xml_node, node_type, link_type, catalog_name):
         linked = xml_node.findall(node_type)
         if len(linked) == 0:
-            raise ValueError(
-                f"{link_type} {catalog_name} has no many {node_type} catalog"
-            )
+            raise ValueError(f"{link_type} {catalog_name} has no many {node_type} catalog")
         if len(linked) > 1:
-            raise ValueError(
-                f"{link_type} {catalog_name} has too many {node_type} catalogs"
-            )
+            raise ValueError(f"{link_type} {catalog_name} has too many {node_type} catalogs")
         linked_text = linked[0].text
 
         if not linked_text in self.entries:
-            raise ValueError(
-                f"{link_type} {catalog_name} missing {node_type} catalog {linked_text}"
-            )
+            raise ValueError(f"{link_type} {catalog_name} missing {node_type} catalog {linked_text}")
         return self.entries[linked_text]
 
     def _get_metadata_keywords(self, catalog_path):
@@ -129,9 +115,7 @@ class Registry:
             raise FileNotFoundError(f"No directory exists at {catalog_path}")
         metadata_filename = os.path.join(catalog_path, "catalog_info.json")
         if not os.path.exists(metadata_filename):
-            raise FileNotFoundError(
-                f"No catalog info found where expected: {metadata_filename}"
-            )
+            raise FileNotFoundError(f"No catalog info found where expected: {metadata_filename}")
 
         with open(metadata_filename, "r", encoding="utf-8") as metadata_info:
             metadata_keywords = json.load(metadata_info)
@@ -194,5 +178,5 @@ class Registry:
                 ET.SubElement(catalog, "join").text = entry.join.catalog_name
 
         tree = ElementTree(root)
-        ET.indent(tree, space="\t", level=0)
+        # ET.indent(tree, space="\t", level=0)
         tree.write(self.file)

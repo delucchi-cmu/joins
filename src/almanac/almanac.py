@@ -79,9 +79,7 @@ class Almanac:
 
     def _get_linked_catalog(self, linked_text, node_type, link_type, catalog_name):
         if not linked_text in self.entries:
-            raise ValueError(
-                f"{link_type} {catalog_name} missing {node_type} catalog {linked_text}"
-            )
+            raise ValueError(f"{link_type} {catalog_name} missing {node_type} catalog {linked_text}")
         return self.entries[linked_text]
 
     def catalogs(self):
