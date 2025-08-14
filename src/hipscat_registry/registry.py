@@ -53,7 +53,6 @@ class Registry:
         self._init_from_tree(ET.parse(self.file).getroot())
 
     def _init_from_tree(self, root):
-
         ## Loop over tree once to initialize all the entries.
         for catalog in root.findall("catalog"):
             new_entry = CatalogEntry()
